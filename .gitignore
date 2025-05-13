@@ -1,0 +1,142 @@
+# Gradle files
+.gradle/
+build/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+.gradletasknamecache
+**/build/
+gradlew.bat
+gradlew
+gradle/
+local.properties
+
+# Android Studio / IntelliJ IDEA files
+*.iml
+*.iws
+*.ipr
+.idea/
+.idea/**
+out/
+captures/
+.navigation/
+.externalNativeBuild/
+.cxx/
+
+# Built application files
+*.apk
+*.ap_
+*.aab
+*.aar
+
+# Files for the Dalvik VM / ART
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+app/release/
+app/debug/
+app/production/
+
+# Log/OS Files
+*.log
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Android Package Files
+*.jks
+*.keystore
+*.p12
+*.pepk
+
+# Google Services & Firebase
+google-services.json
+firebase_options.dart
+google-services-v3.json
+app/google-services.json
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+fastlane/metadata
+
+# Version control
+vcs.xml
+
+# Android Profiling
+*.hprof
+
+# Android Studio Patch
+gen-external-apklibs
+
+# CMake
+cmake-build-*/
+
+# NDK
+.externalNativeBuild
+.cxx/
+obj/
+.ndk/
+
+# Flutter/Dart specific
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub/
+.dart_tool/
+flutter_*.png
+linked_*.ds
+unlinked.ds
+unlinked_spec.ds
+
+# Project specific
+proguard/
+lint/generated/
+lint/outputs/
+lint/tmp/
+javadoc/
+
+# CI/CD related files
+.gitlab-ci.yml.tags
+*.gpg
+signing-key-id
+
+# Crashlytics
+crashlytics.properties
+crashlytics-build.properties
+com_crashlytics_export_strings.xml
+fabric.properties
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~.nib
+*.orig
+temp/
+tmp/
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Misc
+*.ctxt
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

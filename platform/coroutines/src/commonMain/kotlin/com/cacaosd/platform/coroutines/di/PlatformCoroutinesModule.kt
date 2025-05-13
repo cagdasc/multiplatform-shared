@@ -1,0 +1,29 @@
+package com.cacaosd.platform.coroutines.di
+
+import com.cacaosd.platform.coroutines.dispatchers.PlatformDispatchers
+import com.cacaosd.platform.coroutines.dispatchers.getPlatformDispatchers
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.SupervisorJob
+import org.koin.core.KoinApplication
+import org.koin.core.qualifier.TypeQualifier
+import org.koin.dsl.bind
+import org.koin.dsl.module
+
+fun KoinApplication.platformCoroutines(): KoinApplication {
+    koin.loadModules(
+        modules = listOf(
+            module {
+                single { _root_ide_package_.com.cacaosd.platform.coroutines.dispatchers.getPlatformDispatchers() } bind PlatformDispatchers::class
+                factory(qualifier = ioScopeQualifier) {
+                    val platformDispatchers = get<PlatformDispatchers>()
+                    CoroutineScope(platformDispatchers.io + SupervisorJob())
+                }
+            }
+        )
+    )
+    return this
+}
+
+internal object IoScoped
+
+val ioScopeQualifier = TypeQualifier(IoScoped::class)
