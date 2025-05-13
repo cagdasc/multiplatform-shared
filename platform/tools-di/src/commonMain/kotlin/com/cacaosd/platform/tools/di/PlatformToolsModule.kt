@@ -1,5 +1,6 @@
 package com.cacaosd.platform.tools.di
 
+import com.cacaosd.platform.tools.activity.PlatformActivity
 import com.cacaosd.platform.tools.config.PlatformConfiguration
 import com.cacaosd.platform.tools.intent.IntentUtil
 import com.cacaosd.platform.tools.intent.getIntentUtil
@@ -11,7 +12,7 @@ fun KoinApplication.platformConfiguration(platformConfiguration: PlatformConfigu
         modules = listOf(
             module {
                 single { platformConfiguration }
-                single { _root_ide_package_.com.cacaosd.platform.tools.activity.PlatformActivity() }
+                single { PlatformActivity() }
                 single<IntentUtil> { getIntentUtil(get()) }
             }
         )

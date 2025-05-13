@@ -15,8 +15,7 @@ class JvmIntentUtil : IntentUtil {
     override fun getOpenInAppIntent(
         data: String,
         title: String
-    ): PlatformIntent =
-        _root_ide_package_.com.cacaosd.platform.tools.intent.PlatformIntent()
+    ): PlatformIntent = PlatformIntent()
 
     override fun openInApp(
         activity: PlatformActivity,

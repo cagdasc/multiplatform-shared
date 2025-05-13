@@ -14,5 +14,5 @@ actual abstract class PlatformContext private constructor() {
 actual val LocalPlatformContext = staticCompositionLocalOf { PlatformContext.INSTANCE }
 
 actual fun PlatformContext.findActivity(): PlatformActivity? {
-    return _root_ide_package_.com.cacaosd.platform.tools.activity.PlatformActivity()
+    return PlatformActivity()
 }
