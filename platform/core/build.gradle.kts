@@ -4,6 +4,8 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.compose.multiplatform)
 }
 
 kotlin {
@@ -16,12 +18,16 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(project(":platform:coroutines"))
-                implementation(libs.kotlinx.coroutines.core)
-                implementation(libs.koin.core)
-            }
+        androidMain.dependencies {
+            implementation(libs.activity.compose)
+        }
+
+        commonMain.dependencies {
+            implementation(compose.ui)
+        }
+
+        jvmMain.dependencies {
+            implementation(compose.desktop.currentOs)
         }
     }
 
@@ -30,8 +36,9 @@ kotlin {
         freeCompilerArgs.add("-Xexpect-actual-classes")
     }
 }
+
 android {
-    namespace = "com.cacaosd.platform.coroutines.di"
+    namespace = "com.cacaosd.platform.core"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -54,5 +61,3 @@ android {
         targetCompatibility = JavaVersion.VERSION_21
     }
 }
-
-dependencies { }

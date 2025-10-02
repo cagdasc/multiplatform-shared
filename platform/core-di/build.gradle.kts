@@ -16,12 +16,9 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(project(":platform:coroutines"))
-                implementation(libs.kotlinx.coroutines.core)
-                implementation(libs.koin.core)
-            }
+        commonMain.dependencies {
+            implementation(project(":platform:core"))
+            implementation(libs.koin.core)
         }
     }
 
@@ -30,8 +27,9 @@ kotlin {
         freeCompilerArgs.add("-Xexpect-actual-classes")
     }
 }
+
 android {
-    namespace = "com.cacaosd.platform.coroutines.di"
+    namespace = "com.cacaosd.platform.tools.core.di"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -54,5 +52,3 @@ android {
         targetCompatibility = JavaVersion.VERSION_21
     }
 }
-
-dependencies { }

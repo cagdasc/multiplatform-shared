@@ -26,5 +26,5 @@ dependencyResolutionManagement {
 rootProject.name = "platform-shared"
 include(":platform:coroutines")
 include(":platform:coroutines-di")
-include(":platform:tools")
-include(":platform:tools-di")
+include(":platform:core")
+include(":platform:core-di")
